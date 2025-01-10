@@ -1,6 +1,7 @@
 import dbConnect from "@/app/dbConfig/db";
 import Application from "@/models/application";
 import { NextResponse } from "next/server";
+export const revalidate = 0;
 
 export const GET = async () => {
   try {
