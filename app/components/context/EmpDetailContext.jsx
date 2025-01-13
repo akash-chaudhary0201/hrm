@@ -7,7 +7,6 @@ export const EmpDetailContext = createContext();
 export const EmpDetProvider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
   const [totalEmp, setTotalEmp] = useState(0);
-  const [hrName, setHrname] = useState("");
   const [jobs, setJobs] = useState([]);
   const [totalJobs, setTotalJobs] = useState(0);
   const [applications, setApplications] = useState([]);
@@ -47,17 +46,7 @@ export const EmpDetProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const fetchHRDet = async () => {
-      try {
-        const response = await axios.get("/api/hr/hrDet");
-        if (response.data.success) {
-          setHrname(response.data.hr.name);
-        }
-      } catch (error) {}
-    };
-
     fethcEmployees();
-    fetchHRDet();
     fetchJobs();
     fetchApplications();
   }, []);
@@ -67,7 +56,6 @@ export const EmpDetProvider = ({ children }) => {
       value={{
         employees,
         totalEmp,
-        hrName,
         fethcEmployees,
         jobs,
         totalJobs,

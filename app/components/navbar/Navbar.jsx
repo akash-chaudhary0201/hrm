@@ -25,7 +25,6 @@ const Navbar = () => {
     }
   };
 
-  const { hrName } = useContext(EmpDetailContext);
   const [isMounted, setIsMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -65,7 +64,6 @@ const Navbar = () => {
               </button>
             </Link>
           )}
-          <p className="flex pl-[10px] justify-center items-center">{hrName}</p>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
